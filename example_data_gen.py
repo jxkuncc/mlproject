@@ -13,12 +13,14 @@ from copy import deepcopy
 from shapelib.Shapes import Shape
 from shapelib.Data import data_from_shape
 
+# Don't accidentally run this script
+exit(0)
 
 out_dir = 'data/10cube/'
 out_prefix = '10cube_'
 
 train_samples = 5000
-test_samples = 5000
+test_samples =  5000
 rng = np.random.default_rng(1236)
 
 # Create/ Read a Nominal Shape

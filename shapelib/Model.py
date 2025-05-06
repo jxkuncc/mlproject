@@ -38,7 +38,10 @@ class ShapeAutoEncoder(nn.Module):
 
 
     def forward(self, x):
+        #print('forward',x.size())
         encoded = self.encoder(x) 
+        #print('encoded',encoded.size())
         decoded = self.decoder(encoded) 
-        decoded =torch.reshape(decoded,(1,8,3))
+        decoded = torch.reshape(decoded,(decoded.size()[0], 8,3))
+        #print('decoded',decoded.size())
         return decoded 
