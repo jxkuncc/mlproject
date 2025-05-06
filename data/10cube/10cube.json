@@ -1,0 +1,266 @@
+{
+    "Vertex_0": {
+        "xyz": [
+            5.0,
+            5.0,
+            5.0
+        ],
+        "xyz_distributions": [
+            {
+                "name": "normal",
+                "shift": 0,
+                "params": {
+                    "loc": 0,
+                    "scale": 0.2
+                }
+            },
+            {
+                "name": "normal",
+                "shift": 0,
+                "params": {
+                    "loc": 0,
+                    "scale": 0.2
+                }
+            },
+            {
+                "name": "normal",
+                "shift": 0,
+                "params": {
+                    "loc": 0,
+                    "scale": 0.2
+                }
+            }
+        ]
+    },
+    "Vertex_1": {
+        "xyz": [
+            -5.0,
+            5.0,
+            5.0
+        ],
+        "xyz_distributions": [
+            {
+                "name": "normal",
+                "shift": 0,
+                "params": {
+                    "loc": 0,
+                    "scale": 0.2
+                }
+            },
+            {
+                "name": "normal",
+                "shift": 0,
+                "params": {
+                    "loc": 0,
+                    "scale": 0.2
+                }
+            },
+            {
+                "name": "normal",
+                "shift": 0,
+                "params": {
+                    "loc": 0,
+                    "scale": 0.2
+                }
+            }
+        ]
+    },
+    "Vertex_2": {
+        "xyz": [
+            -5.0,
+            -5.0,
+            5.0
+        ],
+        "xyz_distributions": [
+            {
+                "name": "normal",
+                "shift": 0,
+                "params": {
+                    "loc": 0,
+                    "scale": 0.2
+                }
+            },
+            {
+                "name": "normal",
+                "shift": 0,
+                "params": {
+                    "loc": 0,
+                    "scale": 0.2
+                }
+            },
+            {
+                "name": "normal",
+                "shift": 0,
+                "params": {
+                    "loc": 0,
+                    "scale": 0.2
+                }
+            }
+        ]
+    },
+    "Vertex_3": {
+        "xyz": [
+            5.0,
+            -5.0,
+            5.0
+        ],
+        "xyz_distributions": [
+            {
+                "name": "normal",
+                "shift": 2,
+                "params": {
+                    "loc": 0,
+                    "scale": 2
+                }
+            },
+            {
+                "name": "normal",
+                "shift": 0,
+                "params": {
+                    "loc": 0,
+                    "scale": 0.2
+                }
+            },
+            {
+                "name": "normal",
+                "shift": 0,
+                "params": {
+                    "loc": 0,
+                    "scale": 0.2
+                }
+            }
+        ]
+    },
+    "Vertex_4": {
+        "xyz": [
+            5.0,
+            5.0,
+            -5.0
+        ],
+        "xyz_distributions": [
+            {
+                "name": "normal",
+                "shift": 0,
+                "params": {
+                    "loc": 0,
+                    "scale": 0.2
+                }
+            },
+            {
+                "name": "normal",
+                "shift": 0,
+                "params": {
+                    "loc": 0,
+                    "scale": 0.2
+                }
+            },
+            {
+                "name": "normal",
+                "shift": 0,
+                "params": {
+                    "loc": 0,
+                    "scale": 0.2
+                }
+            }
+        ]
+    },
+    "Vertex_5": {
+        "xyz": [
+            -5.0,
+            5.0,
+            -5.0
+        ],
+        "xyz_distributions": [
+            {
+                "name": "normal",
+                "shift": 0,
+                "params": {
+                    "loc": 0,
+                    "scale": 0.2
+                }
+            },
+            {
+                "name": "normal",
+                "shift": 0,
+                "params": {
+                    "loc": 0,
+                    "scale": 0.2
+                }
+            },
+            {
+                "name": "normal",
+                "shift": 0,
+                "params": {
+                    "loc": 0,
+                    "scale": 0.2
+                }
+            }
+        ]
+    },
+    "Vertex_6": {
+        "xyz": [
+            -5.0,
+            -5.0,
+            -5.0
+        ],
+        "xyz_distributions": [
+            {
+                "name": "normal",
+                "shift": 0,
+                "params": {
+                    "loc": 0,
+                    "scale": 0.2
+                }
+            },
+            {
+                "name": "normal",
+                "shift": 0,
+                "params": {
+                    "loc": 0,
+                    "scale": 0.2
+                }
+            },
+            {
+                "name": "normal",
+                "shift": 0,
+                "params": {
+                    "loc": 0,
+                    "scale": 0.2
+                }
+            }
+        ]
+    },
+    "Vertex_7": {
+        "xyz": [
+            5.0,
+            -5.0,
+            -5.0
+        ],
+        "xyz_distributions": [
+            {
+                "name": "normal",
+                "shift": 0,
+                "params": {
+                    "loc": 0,
+                    "scale": 0.2
+                }
+            },
+            {
+                "name": "normal",
+                "shift": 0,
+                "params": {
+                    "loc": 0,
+                    "scale": 0.2
+                }
+            },
+            {
+                "name": "normal",
+                "shift": 0,
+                "params": {
+                    "loc": 0,
+                    "scale": 0.2
+                }
+            }
+        ]
+    }
+}
