@@ -6,6 +6,8 @@ Purpose: This code was written for the MEGR Machine Learning in Manufacturing
 
 Date: May 05, 2025
 """
+import numpy as np
+from shapelib.Shapes import Shape
 import torch
 from torch import nn
 
@@ -72,3 +74,15 @@ class ShapeNetDeep(nn.Module):
             remaining-=3
 
         return linear_layers
+    
+
+def tobatch(sample)->torch.Tensor:
+    if isinstance(sample, Shape):
+        return torch.from_numpy(sample.vertices).expand((1, *sample.vertices.shape))
+    elif isinstance(sample, np.ndarray):
+        return torch.from_numpy(sample).expand((1, *sample.shape))
+    else:
+        raise NotImplemented(f"sample of type {type(sample)} to batch is not implemented")
+    
+def frombatch(sample:torch.Tensor)->np.ndarray:
+    return sample.detach().numpy()[0]

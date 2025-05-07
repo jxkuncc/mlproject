@@ -33,6 +33,7 @@ def apply_htm(htm:np.ndarray, A:np.ndarray):
     return np.rot90(bf, axes=(0,1))    
 
 def best_fit_transform(A, B):
+    # Credit to https://github.com/ClayFlannigan/icp
     '''
     Calculates the least-squares best-fit transform that maps corresponding points A to B in m spatial dimensions
     Input:

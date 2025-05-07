@@ -14,6 +14,18 @@ from cycler import cycler
 from copy import deepcopy
 from shapelib.Fits import best_fit_transform, apply_htm
 
+# Faces for generating cube polydata
+cube_faces =np.array(
+    [
+        [4, 0, 1, 2, 3], # square 1
+        [4, 0, 1, 5, 4], # square 2
+        [4, 1, 2, 6, 5], # square 3
+        [4, 2, 3, 7, 6], # square 4
+        [4, 0, 3, 7, 4], # square 5
+        [4, 4, 5, 6, 7]  # square 6
+    ]
+)
+
 class Shape():
     # TODO: Clean up plotting colors cycler etc
     # TODO: Docstrings and function headers
@@ -128,15 +140,13 @@ class Shape():
             deformations.append(self.deformation(rng))
         return np.array(deformations)
     
-    def deform(self, deformation:np.ndarray=None, inplace:bool=True):
-        if deformation is None: deformation = self.deformation()
-        assert self.vertices.shape == deformation.shape
-
+    def deform(self, rng=np.random.default_rng(), inplace:bool=True):
         if inplace:
+            deformation = self.deformation(rng=rng)
             self.vertices = self.vertices + deformation
         else:
             new_shape = deepcopy(self)
-            new_shape.deform(deformation, inplace=True)
+            new_shape.deform(rng=rng, inplace=True)
             return new_shape
 
     def best_fit_to(self, another_shape)->np.ndarray:
@@ -250,3 +260,9 @@ class Shape():
     
     def __str__(self):
         return str(self.vertices)
+    
+
+def polycube(shape:Shape)->pv.PolyData:
+    if shape.vertices.shape != (8,3): raise Exception('Shape is not a cube!')
+    return pv.PolyData(shape.vertices, cube_faces)
+    
