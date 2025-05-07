@@ -14,7 +14,6 @@ from torch import nn
 from torch.utils.data import DataLoader
 
 
-
 # Initialize the model
 model = ShapeNetSimple(num_vertices=8)
  
