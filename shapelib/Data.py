@@ -132,7 +132,7 @@ class ShapeDataset(Dataset):
         htm = torch.from_numpy(
             pd.read_csv(self.dir.joinpath(self.file_pairs[idx,1])).to_numpy()
         )
-        #differences = torch.reshape(differences, (1, *differences.size()))
+        #htm = torch.reshape(htm, (1, *htm.size()))
 
         if self.transform:
             raise NotImplementedError('__getitem__ tried to transform the data')

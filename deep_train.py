@@ -3,13 +3,13 @@ import torch
 from torch import nn
 from shapelib.Shapes import Shape
 from shapelib.Data import ShapeDataset
-from shapelib.Model import ShapeNet
+from shapelib.Model import ShapeNetDeep
 from torch.utils.data import DataLoader
 
 
 
 # Initialize the model
-model = ShapeNet()
+model = ShapeNetDeep(num_vertices=8)
  
 # Load dataset
 train_dir = 'data/10cube/train'
@@ -25,38 +25,33 @@ print(f'Using {device}...')
 model.to(device)
  
 # Define the loss function and optimizer
-criterion = nn.MSELoss()
+criterion = nn.L1Loss()#nn.MSELoss()
 optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
  
-# Train the autoencoder
+# Train the Network
 num_epochs = 100
-
 for epoch in range(num_epochs):
     epoch_time = time()
     for data in train_loader:
         fit, transform = data
-        #print(fit.size())
-        #print(difference.size())
-        
+
         # The result the model should produce
         transform = transform.to(device)
 
         # The data we feed to the model
         fit = fit.to(device)
-
-        #print(fit[0])
+ 
         optimizer.zero_grad()
+ 
         # The output from the model
         output = model(fit)
-        #print(output[0])
 
-        
+        # Compute the loss and back-prop
         loss = criterion(output, transform)
         loss.backward()
         optimizer.step()
-        #break
 
     print(f'Epoch [{epoch+1}/{num_epochs}], Loss: {loss.item():.4f}, Time: {time()-epoch_time:0.1f}s')
 
 
-torch.save(model, 'first_model.pth')
+torch.save(model, 'ShapeNetSimpleL1Loss1.pth')

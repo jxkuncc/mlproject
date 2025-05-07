@@ -80,7 +80,6 @@ def _weighted_fit(x:np.ndarray, points, expected_values, stiffness):
     # Sum of the Moments
     # TODO Moments around centroid?
     moments = np.sum(np.cross(points, (expected_values-points)*stiffness), axis = 0)
-
     out = np.array((sum_x_f, sum_y_f, sum_z_f, moments[0], moments[1], moments[2]))
     return out
 
