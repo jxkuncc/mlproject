@@ -82,22 +82,20 @@ class Shape():
             
             file.write(json.dumps(data, indent=4))
 
-    # def central_tendency(self):
-    #     shifts = []
+    def variability_matrix(self)->np.ndarray:
+        var_mat = []
+        for vert_idx in range(self.vertices.shape[0]):
+            # Get the variability for the vertex coordinates
+            xyz_variability = self.variability[vert_idx:vert_idx+3]
 
-    #     for vert_idx in range(self.vertices.shape[0]):
-    #         # Get the variability for the vertex coordinates
-    #         xyz_variability = self.variability[vert_idx:vert_idx+3]
+            vert_xyz_var = []
+            for coordinate_variability in xyz_variability:
+                dist_name = coordinate_variability['name']
+                if dist_name != 'normal': raise NotImplementedError(f'Standard deviation for {dist_name} not implemented')
+                vert_xyz_var.append(coordinate_variability['params']['scale'])
+            var_mat.append(vert_xyz_var)
 
-    #         s = np.array([
-    #             xyz_variability[0]['shift'],
-    #             xyz_variability[1]['shift'],
-    #             xyz_variability[2]['shift']
-    #         ])
-
-    #         shifts.append(s)
-        
-    #     return np.array(shifts)
+        return np.array(var_mat)
 
     def deformation(self, rng:np.random.Generator = None)->np.ndarray:
         #Given a shape and how each point varies

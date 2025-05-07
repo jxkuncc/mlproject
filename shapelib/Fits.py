@@ -92,7 +92,7 @@ def _weighted_fit(x:np.ndarray, points, expected_values, stiffness):
     return out
 
 
-def weighted_fit(A, B, spread):
+def weighted_fit(A, B, spread, out_htm:bool=False):
     "fit A to B give the variability in A"
 
     stiffness = np.divide(np.ones_like(spread), spread)
@@ -104,5 +104,11 @@ def weighted_fit(A, B, spread):
 
     translation = x0[:3]
     rotation = Rotation.from_euler('xyz', x0[3:]).as_matrix()
+
+    if out_htm:
+        htm = np.identity(4)
+        htm[:3,:3] = rotation
+        htm[:3,3] = translation
+        return htm
 
     return (translation, rotation)
