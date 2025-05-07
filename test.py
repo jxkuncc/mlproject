@@ -8,12 +8,15 @@ Date: May 05, 2025
 """
 from time import time
 import torch
+from shapelib.Fits import weighted_fit
 from shapelib.Shapes import Shape
 from shapelib.Data import ShapeDataset
 from torch.utils.data import DataLoader
 
 
-
+# Load the nominal shape
+cube10 = Shape.from_file('data/10cube/10cube.json')
+cube10 = cube10.vertices # we only need the vertices for testing.
 
 # Load dataset
 test_dir = 'data/10cube/test'
@@ -26,6 +29,10 @@ test_loader = DataLoader(dataset=test_dataset, batch_size=1)
 #get the device
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 print(f'Using {device}...')
+
+
+
+
 
 #Load the model and move it to the device
 # model = torch.load('ShapeNetSimpleMSE1.pth', weights_only=False)

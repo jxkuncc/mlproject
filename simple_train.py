@@ -32,8 +32,8 @@ print(f'Using {device}...')
 model.to(device)
  
 # Define the loss function and optimizer
-criterion = nn.L1Loss()#nn.MSELoss()
-optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
+criterion = nn.L1Loss() #nn.MSELoss() 
+optimizer = torch.optim.Adam(model.parameters(), lr=0.01)
  
 # Train the Network
 num_epochs = 100
@@ -61,4 +61,5 @@ for epoch in range(num_epochs):
     print(f'Epoch [{epoch+1}/{num_epochs}], Loss: {loss.item():.4f}, Time: {time()-epoch_time:0.1f}s')
 
 
-torch.save(model, 'data/models/ShapeNetSimpleL1Loss1.pth')
+#torch.save(model, 'data/models/ShapeNetSimpleMSEA.pth')
+torch.save(model, 'data/models/ShapeNetSimpleL1LossA.pth')
