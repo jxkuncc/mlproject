@@ -1,3 +1,11 @@
+"""
+Author: Jorian Khan
+Purpose: This code was written for the MEGR Machine Learning in Manufacturing 
+        course in the spring of 2025 at University of North Carolina at 
+        Charlotte
+
+Date: May 05, 2025
+"""
 import torch
 from torch import nn
 

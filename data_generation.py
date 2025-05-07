@@ -6,12 +6,10 @@ Purpose: This code was written for the MEGR Machine Learning in Manufacturing
 
 Date: April 28, 2025
 """
-
-from time import time
 import numpy as np
-from copy import deepcopy
 from shapelib.Shapes import Shape
 from shapelib.Data import data_from_shape
+from time import time
 
 # Don't accidentally run this script
 exit(0)

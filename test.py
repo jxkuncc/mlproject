@@ -1,6 +1,13 @@
+"""
+Author: Jorian Khan
+Purpose: This code was written for the MEGR Machine Learning in Manufacturing 
+        course in the spring of 2025 at University of North Carolina at 
+        Charlotte
+
+Date: May 05, 2025
+"""
 from time import time
 import torch
-from torch import nn
 from shapelib.Shapes import Shape
 from shapelib.Data import ShapeDataset
 from torch.utils.data import DataLoader
@@ -22,7 +29,8 @@ print(f'Using {device}...')
 
 #Load the model and move it to the device
 # model = torch.load('ShapeNetSimpleMSE1.pth', weights_only=False)
-model = torch.load('ShapeNetSimpleL1Loss1.pth', weights_only=False)
+#model = torch.load('ShapeNetSimpleL1Loss1.pth', weights_only=False)
+model = torch.load('ShapeNetDeepMSE1.pth', weights_only=False)
 model.to(device)
 
 

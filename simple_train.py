@@ -1,9 +1,16 @@
+"""
+Author: Jorian Khan
+Purpose: This code was written for the MEGR Machine Learning in Manufacturing 
+        course in the spring of 2025 at University of North Carolina at 
+        Charlotte
+
+Date: May 05, 2025
+"""
+from shapelib.Data import ShapeDataset
+from shapelib.Models import ShapeNetSimple
 from time import time
 import torch
 from torch import nn
-from shapelib.Shapes import Shape
-from shapelib.Data import ShapeDataset
-from shapelib.Model import ShapeNetSimple
 from torch.utils.data import DataLoader
 
 
@@ -54,4 +61,4 @@ for epoch in range(num_epochs):
     print(f'Epoch [{epoch+1}/{num_epochs}], Loss: {loss.item():.4f}, Time: {time()-epoch_time:0.1f}s')
 
 
-torch.save(model, 'ShapeNetSimpleL1Loss1.pth')
+torch.save(model, 'data/models/ShapeNetSimpleL1Loss1.pth')
